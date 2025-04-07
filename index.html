@@ -36,24 +36,32 @@
                 placeholder="Имя водилы"
             /></label>
             <label class="menu__label"
-              ><input id="user__input" class="menu__input" placeholder="Шекели"
+              ><input id="sum-input" class="menu__input" placeholder="Шекели"
+            /></label>
+            <label class="menu__label"
+              ><input
+                id="rekviziti-vodili"
+                class="menu__input"
+                placeholder="Реквизиты"
             /></label>
             <button class="btn__form" type="button">Создать чек</button>
           </form>
         </div>
       </section>
     </main>
-    <div class="popup popup_type_edit popup_is-animated popup_is-opened">
+    <div class="popup popup_type_edit popup_is-animated">
       <div class="popup__content">
         <div class="popup__header">
           <button type="button" class="popup__close">Закрыть</button>
-          <div class="data__content"><span>6 апреля • 08:12</span></div>
+          <div class="data__content">
+            <span id="previewDate">6 апреля • 08:12</span>
+          </div>
         </div>
         <div class="popup__content-main">
           <div class="content__img">
             <img
               class="popup__img-bank"
-              id="img-bank"
+              id="previewImg"
               src="https://imgproxy.cdn-tinkoff.ru/zoom_05:compressed95/aHR0cHM6Ly9icmFuZHMtcHJvZC5jZG4tdGlua29mZi5ydS9nZW5lcmFsX2xvZ28vdGlua29mZi1uZXcucG5n"
               alt=""
             />
@@ -62,7 +70,7 @@
             <span id="popup__user-name">Фарид Б.</span>
             <span class="dop__user-name">переводы</span>
           </div>
-          <span class="popup__mony">−60 ₽</span>
+          <span id="popup__mony" class="popup__mony-1">−60 ₽</span>
         </div>
         <div class="content__cards-popup">
           <ul class="item">
@@ -171,11 +179,14 @@
             <span class="dop__user-name">Номер телфона</span>
             <span
               >+7
-              <span class="number__card-rekvizit"> (960) 452-82-57</span></span
+              <span class="number__card-rekvizit" id="number-recvizit">
+                (960) 452-82-57</span
+              ></span
             >
           </div>
         </div>
       </div>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
