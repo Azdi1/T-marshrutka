@@ -1,7 +1,7 @@
 .page {
   margin: 0 auto;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(234, 234, 234);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,14 +67,20 @@
 
 .popup__content {
   background-color: rgb(255, 255, 255);
-  border-radius: 25px 25px 0 0;
+  border-radius: 25px;
   padding: 25px 16px;
   width: 386px;
+  height: 700px;
 }
 
 .popup__header {
   display: flex;
-  gap: 50px;
+}
+
+.data__content {
+  justify-content: center;
+  display: flex;
+  width: 68%;
 }
 
 /* popup__content-main */
