@@ -74,8 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
       bankInput.value = usersData[userName].bank;
     }
   }
-
-  // 🔹 события для ПК + мобилок
   userInput.addEventListener("input", autoFillUserData);
   userInput.addEventListener("change", autoFillUserData);
   userInput.addEventListener("keyup", autoFillUserData);
