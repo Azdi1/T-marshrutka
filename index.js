@@ -66,15 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
     previewBankImg.src = bankLogos[bankName] || bankLogos["default"];
   });
 
-  userInput.addEventListener("input", function () {
+  function autoFillUserData() {
     const userName = userInput.value.toLowerCase().trim();
 
     if (usersData[userName]) {
       rekviziti.value = usersData[userName].phone;
       bankInput.value = usersData[userName].bank;
-      userInput.value = usersData[userName].user;
     }
-  });
+  }
+
+  // 🔹 события для ПК + мобилок
+  userInput.addEventListener("input", autoFillUserData);
+  userInput.addEventListener("change", autoFillUserData);
+  userInput.addEventListener("keyup", autoFillUserData);
 });
 
 // Справочник пользователей
