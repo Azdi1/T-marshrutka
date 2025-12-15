@@ -1,3 +1,4 @@
+// export
 const btnFormCreate = document.querySelector(".btn__form");
 const popupClose = document.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://imgproxy.cdn-tinkoff.ru/zoom_05:compressed95/aHR0cHM6Ly9icmFuZHMtcHJvZC5jZG4tdGlua29mZi5ydS9nZW5lcmFsX2xvZ28vdGlua29mZi1uZXcucG5n",
     default:
       "https://imgproxy.cdn-tinkoff.ru/zoom_05:compressed95/aHR0cHM6Ly9icmFuZHMtcHJvZC5jZG4tdGlua29mZi5ydS9nZW5lcmFsX2xvZ28vdGlua29mZi1uZXcucG5n",
+    ozon: "https://imgproxy.cdn-tinkoff.ru/compressed95/aHR0cHM6Ly9icmFuZHMtcHJvZC5jZG4tdGlua29mZi5ydS9nZW5lcmFsX2xvZ28vZmluYW5jZS1vem9uLTIucG5n",
   };
 
   // Обработчик создания чека
@@ -64,8 +66,72 @@ document.addEventListener("DOMContentLoaded", function () {
     previewBankImg.src = bankLogos[bankName] || bankLogos["default"];
   });
 
-  //   // Закрытие попапа
-  //   popupClose.addEventListener("click", function () {
-  //     popup.style.display = "none";
-  //   });
+  userInput.addEventListener("input", function () {
+    const userName = userInput.value.toLowerCase().trim();
+
+    if (usersData[userName]) {
+      rekviziti.value = usersData[userName].phone;
+      bankInput.value = usersData[userName].bank;
+      userInput.value = usersData[userName].user;
+    }
+  });
 });
+
+// Справочник пользователей
+const usersData = {
+  алижон: {
+    user: "Алижон Х.",
+    phone: "+7 (952) 201-77-60",
+    bank: "сбер",
+  },
+  мавджудахон: {
+    user: "Мавджудахон Н.",
+    phone: "+7 (911) 258-91-66",
+    bank: "сбер",
+  },
+  рустам: {
+    user: "Рустам Т.",
+    phone: "+7 (996) 787-37-90",
+    bank: "тинькофф",
+  },
+  сафарали: {
+    user: "Сафарали Х.",
+    phone: "+7 (904) 553-58-40",
+    bank: "ozon",
+  },
+  ибрагим: {
+    user: "Ибрагим М.",
+    phone: "+7 (922) 561-57-72",
+    bank: "сбер",
+  },
+  хайдар: {
+    user: "Акмал К.",
+    phone: "+7 (952) 226-00-44",
+    bank: "сбер",
+  },
+  акмал: {
+    user: "Дмитрий В.",
+    phone: "+7 (964) 364-47-37",
+    bank: "ozon",
+  },
+  // мурад: {
+  //   phone: "+7 977 888-99-00",
+  //   bank: "ozon",
+  // },
+  // наргиса: {
+  //   phone: "+7 977 888-99-00",
+  //   bank: "ozon",
+  // },
+  // мансур: {
+  //   phone: "+7 977 888-99-00",
+  //   bank: "ozon",
+  // },
+  // дмитрий: {
+  //   phone: "+7 977 888-99-00",
+  //   bank: "ozon",
+  // },
+  // эмилия: {
+  //   phone: "+7 977 888-99-00",
+  //   bank: "ozon",
+  // },
+};
